@@ -59,6 +59,18 @@ export class ContactService {
 
   }
 
+  onDeleteContact(contact: IContact){
+    this.http.deleteContact(contact).subscribe({
+      next: (contact) => {
+        console.log(contact);
+        this.getContacts()
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
+  }
+
 
 
 }

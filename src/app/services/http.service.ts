@@ -26,5 +26,9 @@ export class HttpService {
   createContact(contact: IContact){
     return this.http.post("http://localhost:8080/api/contact", {ownerId: contact.owner?.id,firstname: contact.firstname,lastname: contact.lastname,phoneNumber: contact.phoneNumber,favorite: contact.favorite})as Observable<IContact>
   }
+
+  deleteContact(contact: IContact){
+    return this.http.delete(`http://localhost:8080/api/contact?contactId=${contact.id}`)as Observable<IContact>
+  }
 }
 

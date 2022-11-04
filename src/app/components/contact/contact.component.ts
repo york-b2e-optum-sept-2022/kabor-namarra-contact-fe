@@ -1,5 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import {IContact} from "../../interfaces/IContact";
+import {ContactService} from "../../services/contact.service";
 
 @Component({
   selector: 'app-contact',
@@ -10,9 +11,19 @@ export class ContactComponent implements OnInit {
 
   @Input() contact!: IContact;
 
-  constructor() { }
+  check: boolean = false;
+
+  constructor(public contactService: ContactService) { }
 
   ngOnInit(): void {
+  }
+
+  onDeleteClick(){
+    this.contactService.onDeleteContact(this.contact);
+  }
+
+  onCheckDelete(){
+    this.check = !this.check;
   }
 
 }

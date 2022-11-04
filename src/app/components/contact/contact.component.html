@@ -1,3 +1,13 @@
-<div *ngIf="contact.favorite"><strong>*</strong></div>
-<h1>{{contact.firstname}}{{contact.lastname}}</h1>
-<h3>{{contact.phoneNumber}}</h3>
+<div *ngIf="!check">
+  <div *ngIf="contact.favorite"><strong>*</strong></div>
+  <h1>{{contact.firstname}} {{contact.lastname}}</h1>
+  <h3>{{contact.phoneNumber}}</h3>
+  <button (click)="onCheckDelete()">Delete</button>
+  <button>Update</button>
+</div>
+
+<div *ngIf="check">
+  <h3>Are you sure Delete Contact?</h3>
+  <button (click)="onCheckDelete()">No</button>
+  <button (click)="onDeleteClick()">Yes</button>
+</div>
