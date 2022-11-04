@@ -1,0 +1,15 @@
+<div>
+  <input [(ngModel)]="contact.firstname" type="text" placeholder="firstname">
+  <input [(ngModel)]="contact.lastname" type="text" placeholder="lastname">
+</div>
+<div>
+  <input [(ngModel)]="contact.phoneNumber" type="tel" placeholder="phone-number">
+  <div>
+    <button (click)="favorite()">Favorite</button>
+    {{contact.favorite}}
+  </div>
+</div>
+<div>
+  <button (click)="onCancelClick()">Cancel</button>
+  <button (click)="onSubmitClick()">Submit</button>
+</div>

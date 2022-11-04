@@ -8,6 +8,7 @@ import { ContactListComponent } from './components/contact-list/contact-list.com
 import { ContactComponent } from './components/contact/contact.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { CreateContactComponent } from './components/create-contact/create-contact.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {HttpClientModule} from "@angular/common/http";
     CreateAccountComponent,
     LoginComponent,
     ContactListComponent,
-    ContactComponent
+    ContactComponent,
+    CreateContactComponent
   ],
     imports: [
         BrowserModule,

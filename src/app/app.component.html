@@ -6,6 +6,9 @@
   <app-login></app-login>
 </div>
 
-<div *ngIf="loggedIn">
+<div *ngIf="loggedIn && !creatingContact">
   <app-contact-list></app-contact-list>
+</div>
+<div *ngIf="loggedIn && creatingContact">
+  <app-create-contact></app-create-contact>
 </div>
